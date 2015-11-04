@@ -19,20 +19,13 @@ function randomPlay() {
 }
 
 function getPlayerMove(move) {
-    var randomNumber = Math.random();
-    if (move === randomNumber) {
-        return  randomNumber;
-    } else {
+    
         return move || getInput();
-    }
 }
 
 function getComputerMove(move) {
-    if (move === randomNumber) {
-        return  randomNumber;
-    } else {
+ 
         return move ||randomPlay();
-    }
 }
 
 function getWinner(playerMove,computerMove) {
@@ -86,7 +79,7 @@ function playToFive() {
         console.log("Congra---Actually, you lost!");
     }
 }
-    
+ }   
     return [playerWins, computerWins];
 }
 

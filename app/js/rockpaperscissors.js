@@ -23,12 +23,12 @@ function getPlayerMove(move) {
         return move || getInput();
 }
 
-function getComputerMove(move) {
+function getComputerMove() {
  
-        return move ||randomPlay();
+        return randomPlay();
 }
 
-function getWinner(playerMove,computerMove) {
+function getWinner(playerMove, computerMove) {
     var winner;
     if(playerMove === computerMove) {
         winner = "tie";
@@ -37,20 +37,32 @@ function getWinner(playerMove,computerMove) {
     } else if(playerMove === 'rock') {
         if(computerMove === 'scissors') {
             winner = 'player';
+            console.log("Player wins!");
+            return winner;
         } else {
             winner = 'computer';
+            console.log("Computer wins!");
+            return winner;
         }
     } else if(playerMove === 'paper') {
         if(computerMove === 'rock') {
             winner = 'player';
+            console.log("Player wins!");
+            return winner;
         } else {
             winner = 'computer';
+            console.log("Computer wins!");
+            return winner;
         }
     } else if(playerMove === 'scissors') {
         if(computerMove === 'paper') {
             winner = 'player';
+            console.log("Player wins!");
+            return winner;
         } else {
             winner = 'computer';
+            console.log("Computer wins!");
+            return winner;
         }
         } 
 return winner;

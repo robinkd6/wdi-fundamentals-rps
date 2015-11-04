@@ -33,36 +33,29 @@ function getWinner(playerMove, computerMove) {
     if(playerMove === computerMove) {
         winner = "tie";
         console.log("We have a tie!");
-        return winner;
     } else if(playerMove === 'rock') {
         if(computerMove === 'scissors') {
             winner = 'player';
             console.log("Player wins!");
-            return winner;
         } else {
             winner = 'computer';
             console.log("Computer wins!");
-            return winner;
         }
     } else if(playerMove === 'paper') {
         if(computerMove === 'rock') {
             winner = 'player';
             console.log("Player wins!");
-            return winner;
         } else {
             winner = 'computer';
             console.log("Computer wins!");
-            return winner;
         }
     } else if(playerMove === 'scissors') {
         if(computerMove === 'paper') {
             winner = 'player';
             console.log("Player wins!");
-            return winner;
         } else {
             winner = 'computer';
             console.log("Computer wins!");
-            return winner;
         }
         } 
 return winner;
@@ -84,14 +77,16 @@ function playToFive() {
             computerWins += 1;
         }
         console.log("Your move was " + playerMove + " while the Computer's move was " + computerMove + ".");
+        console.log("Player has a score: " + playerWins + " - Computer has a score: " + computerWins + "\n");
         }
     if (playerwins === 5) {
         console.log("Woot! You win!");
-    } else {
+    } else if (computerWins === 5) {
         console.log("Congra---Actually, you lost!");
+    } else {
+        getPlayerMove();
     }
-}
- }   
+}    
     return [playerWins, computerWins];
-}
+
 

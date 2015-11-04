@@ -38,7 +38,9 @@ function getComputerMove(move) {
 function getWinner(playerMove,computerMove) {
     var winner;
     if(playerMove === computerMove) {
-        return 'tie';
+        winner = "tie";
+        console.log("We have a tie!");
+        return winner;
     } else if(playerMove === 'rock') {
         if(computerMove === 'scissors') {
             winner = 'player';
@@ -68,10 +70,20 @@ function playToFive() {
     var playerWins = 0;
     var computerWins = 0;
     while (playerWins < 5 && computerWins < 5 ) {
-    if (humanVsMachine === 'player') {
-        playerWins +=1;
-    } else if (humanVsMachine === 'computer') {
-        computerWins += 1;
+        var playerMove = getPlayerMove();
+        var computerMove = getComputerMove();
+        var winner = getWinner(playerMove, computerMove);
+        if (winner === "player") {
+            playerWins += 1;
+        } else {
+            computerWins += 1;
+        }
+        console.log("Your move was " + playerMove + " while the Computer's move was " + computerMove + ".");
+        }
+    if (playerwins === 5) {
+        console.log("Woot! You win!");
+    } else {
+        console.log("Congra---Actually, you lost!");
     }
 }
     
